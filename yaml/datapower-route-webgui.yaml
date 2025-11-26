@@ -4,7 +4,7 @@ metadata:
   name: webgui
   namespace: datapower
 spec:
-  host: webgui-dp.apps.apps.cpikks.cp.fyre.ibm.com
+  host: webgui-dp.${OCP_DOMAIN}
   port:
     targetPort: 9090
   tls:

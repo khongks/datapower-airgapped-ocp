@@ -4,7 +4,7 @@ metadata:
   name: helloworld
   namespace: datapower
 spec:
-  host: helloworld-dp.apps.apps.cpikks.cp.fyre.ibm.com
+  host: helloworld-dp.${OCP_DOMAIN}
   port:
     targetPort: 8000
   tls:
