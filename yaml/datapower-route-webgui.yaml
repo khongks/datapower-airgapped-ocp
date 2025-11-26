@@ -1,0 +1,16 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  name: webgui
+  namespace: datapower
+spec:
+  host: webgui-dp.apps.apps.cpikks.cp.fyre.ibm.com
+  port:
+    targetPort: 9090
+  tls:
+    termination: passthrough
+  to:
+    kind: Service
+    name: datapower-svc
+    weight: 100
+  wildcardPolicy: None

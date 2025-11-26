@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: datapower-svc
+  namespace: datapower
+spec:
+  ports:
+    - name: webgui
+      protocol: TCP
+      port: 9090
+      targetPort: 9090
+    - name: helloworld
+      protocol: TCP
+      port: 8000
+      targetPort: 8000
+  selector:
+    app.kubernetes.io/name: datapower
+  type: ClusterIP

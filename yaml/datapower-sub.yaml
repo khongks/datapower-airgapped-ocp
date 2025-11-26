@@ -1,0 +1,10 @@
+kind: Subscription
+metadata:
+    name: datapower-operator
+    namespace: datapower
+spec:
+    channel: v1.16
+    installPlanApproval: Automatic
+    name: datapower-operator
+    source: ibm-datapower-operator-catalog
+    sourceNamespace: openshift-marketplace

@@ -1,0 +1,31 @@
+apiVersion: datapower.ibm.com/v1beta3
+kind: DataPowerService
+metadata:
+  name: my-datapower-gateway
+  namespace: datapower
+spec:
+  license:
+    accept: true
+    use: nonproduction
+    license: L-EYGU-PVGRBC
+  replicas: 1
+  resources:
+    limits:
+      memory: 8Gi
+    requests:
+      cpu: 1
+      memory: 4Gi
+  version: 10.6-lts
+  users:
+    - name: admin
+      accessLevel: privileged
+      passwordSecret: admin-credentials
+  domains:
+  - name: 'default'
+    dpApp:
+      config:
+      - 'auto-startup-cfg'
+  - name: 'hello-world'
+    dpApp:
+      config:
+      - 'hello-world-cfg'

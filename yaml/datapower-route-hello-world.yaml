@@ -1,0 +1,17 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  name: helloworld
+  namespace: datapower
+spec:
+  host: helloworld-dp.apps.apps.cpikks.cp.fyre.ibm.com
+  port:
+    targetPort: 8000
+  tls:
+    termination: edge
+    insecureEdgeTerminationPolicy: Redirect
+  to:
+    kind: Service
+    name: datapower-svc
+    weight: 100
+  wildcardPolicy: None
