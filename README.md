@@ -60,10 +60,10 @@ Guide to do airgapped/offline installation of DataPower for OpenShift.
     export TARGET_REGISTRY=${TARGET_REGISTRY_HOST}:${TARGET_REGISTRY_PORT}/${TARGET_REGISTRY_REPO}
     
     ## Use this line if you are using docker
-    export REGISTRY_AUTH_FILE=$HOME/.docker/config.json.
+    # export REGISTRY_AUTH_FILE=$HOME/.docker/config.json.
     
     ## Use this line if you are using podman, we are using podman in our guide.
-    # export REGISTRY_AUTH_FILE=$HOME/.config/containers/auth.json
+    export REGISTRY_AUTH_FILE=$HOME/.config/containers/auth.json
     ```
     Example values:
     ```
